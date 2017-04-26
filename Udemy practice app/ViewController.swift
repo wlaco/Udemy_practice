@@ -14,14 +14,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var theLabel: UILabel!
     
-    @IBAction func theButton(_ sender: AnyObject) {
-        
-        theLabel.text = String(Double(text1.text!)! + Double(text2.text!)!)
+    var addition = true
     
-    }
     @IBOutlet weak var text1: UITextField!
     
     @IBOutlet weak var text2: UITextField!
+    
+    @IBAction func theButton(_ sender: AnyObject) {
+        
+        if addition {
+        theLabel.text = "Answer: \(Double(text1.text!)! + Double(text2.text!)!)"
+        } else {
+            theLabel.text = "Answer: \(Double(text1.text!)! - Double(text2.text!)!)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
